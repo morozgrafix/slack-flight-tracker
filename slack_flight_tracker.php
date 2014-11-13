@@ -112,8 +112,12 @@
 			$output .= $data[$k]['departure']['terminal'];
 		}
 
+		if ($data[$k]['departure']['terminal'] AND $data[$k]['departure']['gate']) {
+			$output .= " : ";
+		}
+
 		if ($data[$k]['departure']['gate']) {
-			$output .= " : " . $data[$k]['departure']['gate'];
+			$output .= $data[$k]['departure']['gate'];
 		}
 
 		$output .= "\n";
@@ -128,8 +132,13 @@
 			$output .= $data[$k]['arrival']['terminal'];
 		}
 
+		if ($data[$k]['arrival']['terminal'] AND $data[$k]['arrival']['gate']) {
+			$output .= " : ";
+		}
+
+
 		if ($data[$k]['arrival']['gate']) {
-			$output .= " : " . $data[$k]['arrival']['gate'];
+			$output .= $data[$k]['arrival']['gate'];
 		}
 		$output .= "\n \n";
 	}
